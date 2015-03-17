@@ -13,6 +13,12 @@ RUN apk upgrade --no-cache --available && \
       "vsftpd>=${VERSION}" \
     && :
 
+# Create sandbox user for vsftpd to run unprivileged.
+RUN adduser -D -s /sbin/nologin user
+RUN deluser sync; \
+    deluser operator; \
+    deluser postgres
+
 EXPOSE 21/tcp
 ENV LANG C
 
