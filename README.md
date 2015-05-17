@@ -85,3 +85,9 @@ Test harness
 
     contributor friction
       there should not be any
+
+
+### Build
+
+    make all
+    make test

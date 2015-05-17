@@ -13,6 +13,17 @@ test:
     - docker version
     - script/test
 
+dependencies:
+  override:
+    - docker info
+    - docker version
+    - make all
+
+test:
+  override:
+    - make test
+
+
 # https://circleci.com/docs/configuration#deployment
 # https://circleci.com/docs/environment-variables
 deployment:
